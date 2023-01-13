@@ -3,14 +3,14 @@ import axios, { AxiosResponse } from "axios";
 
 export const getProductsAPI = async () => {
   let response: AxiosResponse<Product[]> = await axios.get(
-    "https://marmalade-canyon-doll.glitch.me/products"
+    `${process.env.BACKEND_URL}/products`
   );
   return response.data;
 };
 
 export const getProductAPI = async (id: string) => {
   let response: AxiosResponse<Product[]> = await axios.get(
-    `https://marmalade-canyon-doll.glitch.me/products/${id}`
+    `${process.env.BACKEND_URL}/products/${id}`
   );
   return response.data;
 };
