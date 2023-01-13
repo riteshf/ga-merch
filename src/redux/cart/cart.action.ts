@@ -2,7 +2,7 @@ import { addItemToCartAPI, getCartAPI } from "./cart.api";
 import { AppDispatch } from "../store";
 import { CART_LOADING, CART_ERROR, GET_CART, ADD_TO_CART } from "./cart.type";
 
-export const getCart = () => async (dispatch: AppDispatch) => {
+export const getCart = (): any => async (dispatch: AppDispatch) => {
   dispatch({ type: CART_LOADING });
   try {
     let data = await getCartAPI();
@@ -13,7 +13,8 @@ export const getCart = () => async (dispatch: AppDispatch) => {
 };
 
 export const addItemToCart =
-  (productId: number, quantity: number) => async (dispatch: AppDispatch) => {
+  (productId: number, quantity: number): any =>
+  async (dispatch: AppDispatch) => {
     dispatch({ type: CART_LOADING });
     try {
       let data = await addItemToCartAPI(productId, quantity);
