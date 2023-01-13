@@ -10,7 +10,7 @@ export const getCartAPI = async () => {
 
 export const addItemToCartAPI = async (productId: number, quantity: number) => {
   let response: AxiosResponse<Cart> = await axios.post(
-    `${process.env.BACKEND_URL}/carts`
+    `${process.env.BACKEND_URL}/carts`,
     { productId, quantity }
   );
   return response.data;
